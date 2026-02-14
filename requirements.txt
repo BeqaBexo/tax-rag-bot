@@ -1,0 +1,11 @@
+anthropic
+langchain-anthropic
+langchain-core
+langchain-community
+langchain-text-splitters
+chromadb
+pypdf
+python-dotenv
+streamlit
+pydantic
+requests

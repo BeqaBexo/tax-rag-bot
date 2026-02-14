@@ -1,0 +1,8 @@
+.env                  ← API KEY აქაა!
+venv/
+data/documents/*.pdf
+data/vector_db/
+data/cache/
+data/logs/
+__pycache__/
+*.pyc
