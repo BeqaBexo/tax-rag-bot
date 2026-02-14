@@ -46,7 +46,7 @@ class Settings:
     TOP_K_RESULTS = 3
     
     # === Embeddings ===
-    EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
     EMBEDDING_DEVICE = "cpu"
     
     # === Vector Database ===
