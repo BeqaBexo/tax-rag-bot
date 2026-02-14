@@ -1,8 +1,72 @@
-.env                  ← API KEY აქაა!
+# Virtual Environment
 venv/
-data/documents/*.pdf
+env/
+ENV/
+.venv
+
+# Environment variables - API KEYS! ⚠️ CRITICAL
+.env
+*.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+*.pyo
+*.pyd
+
+# Vector Database (auto-created)
 data/vector_db/
 data/cache/
+chroma_db/
+
+# Documents - TEMPORARILY DISABLED FOR DEMO
+# data/documents/*.pdf
+# data/documents/**/*.pdf
+# *.pdf
+
+# Logs
 data/logs/
-__pycache__/
-*.pyc
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Distribution
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Keep empty directories
+!.gitkeep
+```
+
+---
+
+## 🚀 შემდეგი ნაბიჯები:
+
+### **1. შეინახე `.gitignore`**
+```
+Ctrl + S
