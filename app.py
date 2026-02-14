@@ -74,12 +74,32 @@ def initialize_rag_service():
     if st.session_state.rag_service is None:
         try:
             with st.spinner('⏳ ვტვირთავ RAG სისტემას...'):
+                # Check if Vector DB exists, if not - create it
+                from src.services.vectordb_service import VectorDBService
+                import os
+                
+                vectordb_service = VectorDBService()
+                
+                # If Vector DB doesn't exist, create it
+                if not os.path.exists(settings.VECTOR_DB_DIR) or len(os.listdir(settings.VECTOR_DB_DIR)) == 0:
+                    st.info('📊 პირველი გაშვება - ვქმნი Vector Database-ს...')
+                    st.info('⏳ ეს შეიძლება 2-3 წუთი გასტანოს...')
+                    
+                    # Create Vector DB from documents
+                    vectordb_service.create_database(force_recreate=True)
+                    
+                    st.success('✅ Vector Database შეიქმნა!')
+                
+                # Now initialize RAG service
                 st.session_state.rag_service = RAGService(prompt_type="base")
                 st.session_state.initialized = True
+            
             st.success('✅ სისტემა მზადაა!')
             return True
         except Exception as e:
             st.error(f'❌ შეცდომა: {e}')
+            import traceback
+            st.error(traceback.format_exc())
             return False
     return True
 
